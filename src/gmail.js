@@ -26,10 +26,10 @@ const getGmailEmails = async () => {
     Imap.connect(imapConfig)
       .then((connection) => {
         return connection.openBox('INBOX').then(() => {
-          const searchCriteria = ['UNSEEN']; // Search for unread emails
+          const searchCriteria = ['UNSEEN'];
           const fetchOptions = {
             bodies: ['HEADER', 'TEXT'],
-            markSeen: false, 
+            markSeen: true, 
           };
 
           return connection.search(searchCriteria, fetchOptions).then((messages) => {
@@ -73,3 +73,4 @@ const sendGmailEmail = async (to, subject, body) => {
 };
 
 
+module.exports = { getGmailEmails, sendGmailEmail };

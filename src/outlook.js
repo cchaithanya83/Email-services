@@ -32,7 +32,7 @@ const getOutlookEmails = async (maxEmails = 5) => {
           const searchCriteria = ['UNSEEN']; // Search for unread emails
           const fetchOptions = {
             bodies: ['HEADER'],
-            markSeen: false, 
+            markSeen: true, 
             struct: true,
           };
 
@@ -41,9 +41,11 @@ const getOutlookEmails = async (maxEmails = 5) => {
 
             const recentEmails = recentMessages.map((msg) => {
               const header = msg.parts.filter((part) => part.which === 'HEADER')[0];
+              const body = msg.parts.filter((part) => part.which === 'TEXT')[0];
               return {
                 from: header.body.from[0],
                 subject: header.body.subject[0],
+                body:body.body,
                 date: header.body.date[0],
               };
             });
@@ -80,3 +82,4 @@ const sendOutlookEmail = async (to, subject, body) => {
 };
 
 
+module.exports = { getOutlookEmails, sendOutlookEmail };
