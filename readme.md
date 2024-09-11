@@ -1,5 +1,5 @@
 
-# Email Services
+# Automated Email Handling: AI-Powered Categorization, Replies, and Task Scheduling
 
 This project provides a comprehensive solution for email management, including reading and sending emails from Gmail and Outlook accounts, AI-powered context-based replies, and task scheduling using BullMQ.
 
@@ -12,7 +12,6 @@ This project provides a comprehensive solution for email management, including r
 
 ## Technology Stack
 
-- **JavaScript/TypeScript**: Backend development.
 - **Node.js**: Server-side runtime.
 - **Nodemailer**: For sending emails.
 - **IMAP-Simple**: For reading emails.
