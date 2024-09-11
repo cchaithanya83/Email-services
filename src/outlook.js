@@ -29,9 +29,9 @@ const getOutlookEmails = async (maxEmails = 5) => {
     Imap.connect(imapConfig)
       .then((connection) => {
         return connection.openBox('INBOX').then(() => {
-          const searchCriteria = ['UNSEEN']; // Search for unread emails
+          const searchCriteria = ['UNSEEN'];
           const fetchOptions = {
-            bodies: ['HEADER'],
+            bodies: ['HEADER', 'TEXT'],
             markSeen: true, 
             struct: true,
           };
@@ -40,12 +40,14 @@ const getOutlookEmails = async (maxEmails = 5) => {
             const recentMessages = messages.slice(-maxEmails);
 
             const recentEmails = recentMessages.map((msg) => {
+                // console.log(msg.parts)
               const header = msg.parts.filter((part) => part.which === 'HEADER')[0];
               const body = msg.parts.filter((part) => part.which === 'TEXT')[0];
+            //   console.log(body)
               return {
                 from: header.body.from[0],
                 subject: header.body.subject[0],
-                body:body.body,
+                body: body.body,
                 date: header.body.date[0],
               };
             });

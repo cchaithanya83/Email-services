@@ -43,4 +43,4 @@ const pollEmails = async () => {
   }
 };
 
-setInterval(pollEmails, 60 * 1000); // checks every 6 sec
+setInterval(pollEmails, 60 * 1000); // checks every 60 sec
