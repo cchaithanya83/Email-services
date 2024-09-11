@@ -1,6 +1,3 @@
-Here’s an expanded README file for your project:
-
----
 
 # Email Services
 
