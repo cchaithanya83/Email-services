@@ -91,7 +91,7 @@ All email tasks are handled by BullMQ, ensuring asynchronous and efficient proce
 
 1. Run the worker to process queued emails:
    ```bash
-   node worker.js
+   node index.js
    ```
 
 ## Testing the Application
