@@ -25,7 +25,6 @@ This project provides a comprehensive solution for email management, including r
 - **Node.js**: Install [Node.js](https://nodejs.org/).
 - **Redis**: You need to have Redis installed for BullMQ. Install Redis using the following instructions:
   - On Linux: `sudo apt-get install redis-server`
-  - On macOS: `brew install redis`
   - On Windows: Download and install Redis from [here](https://redis.io/download).
 
 ## Installation
